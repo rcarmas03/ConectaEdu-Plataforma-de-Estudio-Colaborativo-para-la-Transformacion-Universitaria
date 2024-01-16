@@ -51,38 +51,25 @@
     </div>
 
     <div class="seccion-admin">
+        <h2>Tus Grupos</h2>
+        <% if(grupos.length) {%>
         <ul>
+            <% grupos.forEach(grupo => { %>
             <li>
                 <div class="informacion-admin">
-                    <h3>BlockChain UIO</h3>
+                    <h3><%= grupo.nombre %></h3>
                 </div>
                 <div class="acciones contenedor-botones">
-                    <a href="#" class="btn btn-verde">Editar</a>
-                    <a href="#" class="btn btn-azul2">Imagen</a>
-                    <a href="#" class="btn btn-rojo">Eliminar</a>
+                    <a href="/editar-grupo/<%= grupo.id %>" class="btn btn-verde">Editar</a>
+                    <a href="/imagen-grupo/<%= grupo.id %>" class="btn btn-azul2">Imagen</a>
+                    <a href="/eliminar-grupo/<%= grupo.id %>" class="btn btn-rojo">Eliminar</a>
                 </div>
             </li>
-            <li>
-                <div class="informacion-admin">
-                    <h3>GraphQL UIO</h3>
-                </div>
-                <div class="acciones contenedor-botones">
-                    <a href="#" class="btn btn-verde">Editar</a>
-                    <a href="#" class="btn btn-azul2">Imagen</a>
-                    <a href="#" class="btn btn-rojo">Eliminar</a>
-                </div>
-            </li>
-            <li>
-                <div class="informacion-admin">
-                    <h3>Node.js UIO</h3>
-                </div>
-                <div class="acciones contenedor-botones">
-                    <a href="#" class="btn btn-verde">Editar</a>
-                    <a href="#" class="btn btn-azul2">Imagen</a>
-                    <a href="#" class="btn btn-rojo">Eliminar</a>
-                </div>
-            </li>
+            <% }) %>
         </ul>
+        <% } else {%>
+            <p>No tienes un grupo creado</p>
+        <% } %>
     </div>
 
 </main>
