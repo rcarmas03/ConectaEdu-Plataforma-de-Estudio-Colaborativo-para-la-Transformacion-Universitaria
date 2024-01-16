@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meeti - <%- nombrePagina %></title>
+    <link rel="stylesheet" href="https://necolas.github.io/normalize.css/8.0.1/normalize.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway:400,700,900|Staatliches">
+    <link rel="stylesheet" href="/css/trix.css">
+    <link rel="stylesheet" href="/css/app.css">
+</head>
+<body>
+    <header class="site-header contenedor">
+        <a href="/">
+            <img src="/img/logo.png" alt="Logo Meeti">
+        </a>
+
+        <nav class="nav">
+            <a href="#">Crear Cuenta</a>
+            <a href="/iniciar-sesion">Iniciar Sesión</a>
+            <a href="/crear-cuenta">Registrarse</a>
+
+        </nav>
+
+    </header>
+
+    <% if (locals.mensajes) { %>
+        <% const categoria = Object.keys(locals.mensajes) %>
+        <% if(categoria.length) { %>
+            <% locals.mensajes[categoria].forEach(alerta => { %>
+                <div class="alertas">
+                    <p class="alerta <%= categoria %>"><%=  alerta %></p>
+                </div>
+            <% }) %>        
+        <% } %>
+    <% } %>
+
+    <%- body  %>
+
+    <footer class="site-footer contenedor">
+        <nav class="nav">
+            <a href="#">Crear Grupo</a>
+            <a href="/iniciar-sesion">Iniciar Sesión</a>
+            <a href="/crear-cuenta">Registro</a>
+        </nav>
+
+        <p class="copyrigth">Todos los derechos reservados Meeti <%- year %> </p>
+    </footer>
+
+    <script src="/js/trix.js"></script>
+    
+</body>
+</html>
