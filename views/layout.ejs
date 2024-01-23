@@ -6,6 +6,10 @@
     <title>Meeti - <%- nombrePagina %></title>
     <link rel="stylesheet" href="https://necolas.github.io/normalize.css/8.0.1/normalize.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway:400,700,900|Staatliches">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.4.0/dist/leaflet.css" />
+    <link rel="stylesheet" href="https://unpkg.com/esri-leaflet-geocoder@2.2.13/dist/esri-leaflet-geocoder.css"
+    integrity="sha512-v5YmWLm8KqAAmg5808pETiccEohtt8rPVMGQ1jA6jqkWVydV5Cuz3nJ9fQ7ittSxvuqsvI9RSGfVoKPaAJZ/AQ=="
+    crossorigin="">
     <link rel="stylesheet" href="/css/trix.css">
     <link rel="stylesheet" href="/css/app.css">
 </head>
@@ -16,10 +20,11 @@
         </a>
 
         <nav class="nav">
-            <a href="#">Crear Cuenta</a>
-            <a href="/iniciar-sesion">Iniciar Sesión</a>
-            <a href="/crear-cuenta">Registrarse</a>
-
+            <% if(locals.usuario.id) { %>
+                <%- include partials/nav-autenticado.ejs %>
+            <% } else { %>
+                <%- include partials/nav-no-autenticado.ejs %>
+            <% } %>
         </nav>
 
     </header>
@@ -48,6 +53,14 @@
     </footer>
 
     <script src="/js/trix.js"></script>
+    <script src="https://unpkg.com/leaflet@1.4.0/dist/leaflet.js"></script>
+    <script src="https://unpkg.com/esri-leaflet@2.2.4/dist/esri-leaflet.js"
+    integrity="sha512-tyPum7h2h36X52O2gz+Pe8z/3l+Y9S1yEUscbVs5r5aEY5dFmP1WWRY/WLLElnFHa+k1JBQZSCDGwEAnm2IxAQ=="
+    crossorigin=""></script>
+    <script src="https://unpkg.com/esri-leaflet-geocoder@2.2.13/dist/esri-leaflet-geocoder.js"
+    integrity="sha512-zdT4Pc2tIrc6uoYly2Wp8jh6EPEWaveqqD3sT0lf5yei19BC1WulGuh5CesB0ldBKZieKGD7Qyf/G0jdSe016A=="
+    crossorigin=""></script>
+    <script src="/dist/bundle.js"></script>
     
 </body>
 </html>

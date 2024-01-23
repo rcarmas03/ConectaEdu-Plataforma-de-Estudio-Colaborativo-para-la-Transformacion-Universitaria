@@ -39,7 +39,7 @@ exports.subirImagen = (req, res, next) => {
             console.log(error);
             if(error instanceof multer.MulterError){
                 if(error.code == 'LIMIT_FIELD_SIZE'){
-                    req.flash('error', 'El Archivo es mmuy grande')
+                    req.flash('error', 'El Archivo es muy grande')
                 }else{
                     req.flash('error', error.message);
                 } 
@@ -213,12 +213,6 @@ exports.formEliminarGrupo = async (req, res, next) =>{
 // Elimina el grupo e imagen
 exports.eliminarGrupo = async (req, res, next) => {
     const grupo = await Grupos.findOne({ where : { id : req.params.grupoId, usuarioId : req.user.id}});
-
-    if(!grupo){
-        req.flash('error', 'Operación no válida');
-        res.redirect('/administracion');
-        return next();
-    }
 
     // si hay una imagen, eliminarla
     if(grupo.imagen){

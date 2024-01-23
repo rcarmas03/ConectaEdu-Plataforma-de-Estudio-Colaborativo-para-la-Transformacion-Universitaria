@@ -15,6 +15,7 @@ const db = require('./config/db');
     require('./models/Usuarios');
     require('./models/Categorias');
     require('./models/Grupos');
+    require('./models/Meetis');
     db.sync().then(() => console.log('DB Conectada')).catch((error) => console.log(error));
 
 // Variables de Desarrollo
@@ -56,15 +57,15 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 
-// agrega falsh messages
+// agrega flash messages
 app.use(flash());
 
 // Middlelware (usuario loagueado, flash messages, fecha actual)
 app.use((req, res, next) =>{
+    res.locals.usuario = {...req.user} || null;
     res.locals.mensajes = req.flash();
     const fecha = new Date();
     res.locals.year = fecha.getFullYear(); 
-
     next();
 });
 
