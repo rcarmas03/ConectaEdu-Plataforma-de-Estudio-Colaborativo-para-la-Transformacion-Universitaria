@@ -8,11 +8,47 @@ const adminController = require('../controllers/adminController');
 const gruposController = require('../controllers/gruposController');
 const meetiController = require('../controllers/meetiController');
 
+const meetiControllerFE = require('../controllers/frontend/meetiControllerFE');
+const usuariosControllerFE = require('../controllers/frontend/usuariosControllerFE');
+const gruposControllerFE = require('../controllers/frontend/gruposControllerFE');
 
 module. exports = function() {
+    
+    /** AREA PUBLICA */
+
     router.get('/', homeController.home);
 
-    // Crear y confirmar cuentas
+    // Muestra un meeti
+    router.get('/meeti/:slug',
+        meetiControllerFE.mostrarMeeti,
+    );
+
+    // Confirma la asistencia a meeti
+    router.post('/confirmar-asistencia/:slug', 
+        meetiControllerFE.confirmarAsistencia
+    );
+
+    /**Muestra asistentes al meeti */
+    router.get('/asistentes/:slug',
+        meetiControllerFE.mostrarAsistentes
+    );
+
+    // muestra perfiles en el front end
+    router.get('/usuarios/:id',
+        usuariosControllerFE.mostrarUsuario
+    );
+
+    // muestra los grupos en el front end
+    router.get('/grupos/:id',
+        gruposControllerFE.mostrarGrupo
+    );
+
+    // Muestra meetis por categoria
+    router.get('/categoria/:categoria',
+        meetiControllerFE.mostrarCategoria
+    );
+
+    /** Crear y confirmar cuentas */
     router.get('/crear-cuenta', usuariosController.formCrearCuenta);
     router.post('/crear-cuenta', usuariosController.crearNuevaCuenta);
     router.get('/confirmar-cuenta/:correo', usuariosController.confirmarCuenta)
@@ -26,6 +62,8 @@ module. exports = function() {
         authController.usuarioAutenticado,
         authController.cerrarSesion,
     );
+
+    /** AREA PRIVADA */
 
     // Panel de administracion
     router.get('/administracion', 

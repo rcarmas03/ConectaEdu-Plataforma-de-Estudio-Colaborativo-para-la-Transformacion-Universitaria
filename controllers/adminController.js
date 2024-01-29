@@ -9,7 +9,9 @@ exports.panelAdministracion = async (req, res) =>{
     // consultas
     const consultas = [];
     consultas.push( Grupos.findAll({ where: { usuarioId : req.user.id }}) );
-    consultas.push( Meeti.findAll({ where: { usuarioId : req.user.id, fecha: { [Op.gte] : moment(new Date()).format("YYYY-MM-DD")} }}) ); // para filtrar solo con la fecha actual en adelante
+    consultas.push( Meeti.findAll({ where: { usuarioId : req.user.id, fecha: { [Op.gte] : moment(new Date()).format("YYYY-MM-DD")} },
+                                                                                                            order : [['fecha', 'ASC']]
+                                                                                                            }) ); // para filtrar solo con la fecha actual en adelante
     consultas.push( Meeti.findAll({ where: { usuarioId : req.user.id, fecha: { [Op.lt] : moment(new Date()).format("YYYY-MM-DD")} }}) ); // para filtrar solo con la fecha anterior al dia actual
 
     
