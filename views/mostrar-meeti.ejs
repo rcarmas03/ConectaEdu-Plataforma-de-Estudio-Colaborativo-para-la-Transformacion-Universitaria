@@ -58,22 +58,34 @@
 
             <div class="comentarios">
                 <h2>Comentarios</h2>
-               
-                        <div class="comentario">
-                            <div class="imagen">
-                               
+                <% if(comentarios.length > 0) {%>
+                    <% comentarios.forEach(comentario => { %>
+                            <%= //JSON.stringify(comentario) %>
+                            <div class="comentario">
+                                <div class="imagen">
+                                    <% if(comentario.usuario.imagen){ %>
+                                        <img src="/uploads/perfiles/<%= comentario.usuario.imagen %>">
+                                    <% } %>
+                                </div>
+                                <div class="texto">
+                                    <p><%= comentario.mensaje %></p>
+                                    <p>Escrito por: 
+                                        <a href="/usuarios/<%= comentario.usuario.id %>">
+                                            <%= comentario.usuario.nombre %> %>
+                                        </a>
+                                    </p>
+                                    <% if(comentario.usuarioId === usuario.id){ %>
+                                        <form action="/eliminar-comentario" method="POST" class="eliminar-comentario">
+                                            <input type="hidden" name="idComentario" value="<%= comentario.id %>">
+                                            <input type="submit" value="Eliminar" class="btn btn-azul">
+                                        </form>
+                                    <% } %>
+                                </div>
                             </div>
-                            <div class="texto">
-                                <p></p>
-                                <p>Escrito por: 
-                                    <a href="/usuarios">
-                                        
-                                    </a>
-                                </p>
-
-                            </div>
-                        </div>
-          
+                    <% }) %>
+                <% } else { %>
+                    <p>No existen comentarios todavía</p>
+                <% } %>
 
                 <!--formulario comentarios-->
                 <% if(usuario.id) { %>
