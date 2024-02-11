@@ -28,10 +28,10 @@ const Meeti = db.define(
             type: Sequelize.STRING,
         },
         invitado : Sequelize.STRING,
-        cupo : {
-            type: Sequelize.INTEGER,
-            defaultValue : 0
-        },
+        // cupo : {
+        //     type: Sequelize.INTEGER,
+        //     defaultValue : 0
+        // },
         descripcion : {
             type : Sequelize.TEXT, 
             allowNull : false,

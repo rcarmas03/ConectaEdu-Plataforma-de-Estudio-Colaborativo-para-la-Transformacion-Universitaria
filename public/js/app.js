@@ -4,8 +4,8 @@ import eliminarComentario from './eliminarComentario';
 
 // obtener valores de la base de datos
 
-const lat = document.querySelector('#lat').value ||  20.666332695977;
-const lng = document.querySelector('#lng').value ||  -103.3921777456999;
+const lat = document.querySelector('#lat').value ||  -0.31486111;
+const lng = document.querySelector('#lng').value ||  -78.44347222;
 const direccion  = document.querySelector('#direccion').value || '';
 const map = L.map('mapa').setView([lat, lng], 15);
 

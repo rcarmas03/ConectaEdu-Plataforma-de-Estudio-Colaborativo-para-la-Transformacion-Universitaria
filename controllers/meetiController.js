@@ -20,10 +20,10 @@ exports.crearMeeti = async (req, res) =>{
     // asignar el usuario
     meeti.usuarioId = req.user.id;
 
-    // cupo opcinal
-    if(req.body.cupo == ''){
-        meeti.cupo = 0;
-    }
+    // cupo opcional
+    // if(req.body.cupo == ''){
+    //     meeti.cupo = 0;
+    // }
 
     meeti.id = uuid();
 
@@ -45,7 +45,7 @@ exports.crearMeeti = async (req, res) =>{
 exports.sanitizarMeeti = (req, res, next) => {
     req.sanitizeBody('titulo');
     req.sanitizeBody('invitado');
-    req.sanitizeBody('cupo');
+    // req.sanitizeBody('cupo');
     req.sanitizeBody('fecha');
     req.sanitizeBody('hora');
     req.sanitizeBody('direccion');
@@ -101,7 +101,7 @@ exports.editarMeeti = async (req, res, next) =>{
     meeti.invitado = invitado;
     meeti.fecha = fecha;
     meeti.hora = hora;
-    meeti.cupo = cupo;
+    // meeti.cupo = cupo;
     meeti.descripcion = descripcion;
     meeti.direccion = direccion;
     meeti.ciudad = ciudad;
