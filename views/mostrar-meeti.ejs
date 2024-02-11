@@ -74,7 +74,7 @@
                                             <%= comentario.usuario.nombre %> %>
                                         </a>
                                     </p>
-                                    <% if(comentario.usuarioId === usuario.id){ %>
+                                    <% if(comentario.usuarioId === usuario.id || meeti.usuarioId === usuario.id){ %>
                                         <form action="/eliminar-comentario" method="POST" class="eliminar-comentario">
                                             <input type="hidden" name="idComentario" value="<%= comentario.id %>">
                                             <input type="submit" value="Eliminar" class="btn btn-azul">
