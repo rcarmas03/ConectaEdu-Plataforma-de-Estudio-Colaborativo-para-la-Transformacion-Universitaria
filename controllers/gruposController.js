@@ -57,7 +57,7 @@ exports.formNuevoGrupo = async (req, res) => {
     const categorias = await Categorias.findAll();
     
     res.render('nuevo-grupo', {
-        nombrePagina : 'Crea un nuevo grupo',
+        nombrePagina : 'Crea una nueva materia/grupo',
         categorias
     })
 }
@@ -108,7 +108,7 @@ exports.formEditarGrupo = async (req, res) => {
     const [grupo, categorias] = await Promise.all(consultas); //Para hacer varias consultas con await
 
     res.render('editar-grupo', {
-        nombrePagina: `Editar Grupo : ${grupo.nombre}`,
+        nombrePagina: `Editar Materia/Grupo : ${grupo.nombre}`,
         grupo, 
         categorias
     })
@@ -145,7 +145,7 @@ exports.formEditarImagen = async (req, res) => {
     const grupo = await Grupos.findByPk(req.params.grupoId);
 
     res.render('imagen-grupo', {
-        nombrePagina : `Editar Imagen Grupo: ${grupo.nombre}`,
+        nombrePagina : `Editar Imagen Materia/Grupo: ${grupo.nombre}`,
         grupo
     })
 }
@@ -207,7 +207,7 @@ exports.formEliminarGrupo = async (req, res, next) =>{
 
     // todo bien, ejecutar la vista
     res.render('eliminar-grupo', {
-        nombrePagina : `Eliminar Grupo : ${grupo.nombre} ` 
+        nombrePagina : `Eliminar Materia/Grupo : ${grupo.nombre} ` 
     })
 }
 

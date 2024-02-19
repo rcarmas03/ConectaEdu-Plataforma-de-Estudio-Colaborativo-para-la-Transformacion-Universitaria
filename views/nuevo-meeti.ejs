@@ -1,7 +1,7 @@
 <main class="contenedor contenedor-formularios">
     <h1><%- nombrePagina %></h1>
     <form class="default-form" action="/nuevo-meeti" method="POST">
-        <legend>Sobre el Meeti</legend>
+        <legend>Sobre la Tutoría</legend>
         <div class="campo">
             <label>Grupo</label>
             <select name="grupoId">
@@ -15,7 +15,7 @@
         </div>
         <div class="campo">
             <label>Titulo</label>
-            <input type="text" name="titulo" placeholder="Titulo Meeti">
+            <input type="text" name="titulo" placeholder="Titulo Tutoría">
         </div>
         <div class="campo">
             <label>Invitado</label>
@@ -43,10 +43,10 @@
             </div>
         </div>
 
-        <legend>Ubicación Meeti</legend>
+        <legend>Ubicación Tutoría</legend>
 
         <div class="campo buscador">
-            <label>Coloca la Dirección del Meeti</label>
+            <label>Coloca la Dirección de la Tutoría</label>
             <div class="contenedor-input">
                 <input type="text" id="formbuscador" placeholder="Ubicación">
                 <small>El asistente colocará una dirección estimada</small>
@@ -78,7 +78,7 @@
             <input type="hidden" id="lat" name="lat">
             <input type="hidden" id="lng" name="lng">
         <div class="campo enviar">
-            <input type="submit" class="btn btn-rosa" value="Crear Meeti">
+            <input type="submit" class="btn btn-rosa" value="Crear Tutoría">
         </div>
     </form>
 </main>

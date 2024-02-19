@@ -7,7 +7,7 @@ exports.formNuevoMeeti = async (req, res) =>{
     const grupos = await Grupos.findAll({ where :{ usuarioId : req.user.id} })
 
     res.render('nuevo-meeti', {
-        nombrePagina :  'Crear Nuevo Meeti',
+        nombrePagina :  'Crear Nueva Tutoría',
         grupos
     })
 }
@@ -30,7 +30,7 @@ exports.crearMeeti = async (req, res) =>{
     // almacenar en la BD
     try{
         await Meeti.create(meeti);
-        req.flash('exito', 'Se ha creado el Meeti Correctamente');
+        req.flash('exito', 'Se ha creado la Tutoría Correctamente');
         res.redirect('/administracion');
     } catch(error) {
         // extraer el message de los errores
@@ -75,7 +75,7 @@ exports.formEditarMeeti = async (req, res, next) =>{
 
     // mostramos la vista
     res.render('editar-meeti', {
-        nombrePagina :  `Editar Meeti : ${meeti.titulo}`,
+        nombrePagina :  `Editar Tutoría : ${meeti.titulo}`,
         grupos,
         meeti
     })
@@ -126,7 +126,7 @@ exports.formEliminarMeeti = async (req, res, next) => {
 
     // mostrar la vista
     res.render('eliminar-meeti', {
-        nombrePagina : `Eliminar Meeti : ${meeti.titulo}`
+        nombrePagina : `Eliminar Tutoría : ${meeti.titulo}`
     });
 }
 
@@ -139,6 +139,6 @@ exports.eliminarMeeti = async (req, res) =>{
         }
     })
 
-    req.flash('exito', 'Meeti Eliminado');
+    req.flash('exito', 'Tutoría Eliminada');
     res.redirect('/administracion');
 }

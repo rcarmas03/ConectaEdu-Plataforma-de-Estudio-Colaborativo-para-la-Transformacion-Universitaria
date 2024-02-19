@@ -2,15 +2,15 @@
     <h1> <%= nombrePagina %></h1>
 
     <div class="contenedor-botones">
-        <a href="/nuevo-grupo" class="btn btn-amarillo">Nuevo Grupo</a>
-        <a href="/nuevo-meeti" class="btn btn-azul">Nuevo Meeti</a>
+        <a href="/nuevo-grupo" class="btn btn-amarillo">Nueva Materia/Grupo</a>
+        <a href="/nuevo-meeti" class="btn btn-azul">Nueva Tutoría</a>
         <a href="/editar-perfil" class="btn btn-rosa">Editar Perfil</a>
         <a href="/cambiar-password" class="btn btn-verde">Cambiar Password</a>
         <a href="/imagen-perfil" class="btn btn-amarillo">Imagen Perfil</a>
     </div>
 
     <div class="seccion-admin">
-        <h2>Próximos Meetis</h2>
+        <h2>Próxima Tutoría</h2>
         <% if(meeti.length) {%>
         <ul>
             <% meeti.forEach(meet => { %>
@@ -31,12 +31,12 @@
             <% }) %>
         </ul>
         <% } else { %>
-            <p>Aun no tienes meeti's creados</p>
+            <p>Aun no tienes tutorías creadas</p>
         <% } %>
     </div>
 
     <div class="seccion-admin">
-        <h2>Tus Grupos</h2>
+        <h2>Tus Materias/Grupos</h2>
         <% if(grupos.length) {%>
         <ul>
             <% grupos.forEach(grupo => { %>
@@ -58,7 +58,7 @@
     </div>
 
     <div class="seccion-admin">
-        <h2>Meetis Anteriores</h2>
+        <h2>Tutorías Anteriores</h2>
         <% if(anteriores.length) {%>
         <ul>
             <% anteriores.forEach(meet => { %>
@@ -79,7 +79,7 @@
             <% }) %>
         </ul>
         <% } else { %>
-            <p>No hay Meetis anteriores</p>
+            <p>No hay Tutorías anteriores</p>
         <% } %>
     </div>
 

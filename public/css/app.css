@@ -180,7 +180,6 @@ p {
 .info-autor p {
     margin: 0;
 }
-
 /** layout**/
 .site-header {
    text-align: center;
@@ -202,18 +201,22 @@ nav.nav a:first-child {
     font-weight: 700;
     border-right: 1px solid #E6E6E6;
 }
-
-/** hero **/
+.logo {
+    height: 92px;
+    width: 290px;
+    padding-left: 110px;
+}
 .hero {
     height: 38rem;
-    background-image: url(../img/hero.jpg);
+    position: relative;
+    background-image: url(../img/ESPE-Matriz.jpg);
     background-size: cover;
     background-position: center center;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-
+    padding-top: 300px;
 }
 .hero h1 {
     max-width:800px;

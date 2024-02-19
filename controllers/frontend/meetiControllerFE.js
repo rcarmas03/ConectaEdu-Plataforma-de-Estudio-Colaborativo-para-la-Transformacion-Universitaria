@@ -122,7 +122,7 @@ exports.mostrarCategoria = async(req, res, next) => {
     });
 
     res.render('categoria', {
-        nombrePagina : `Categoria: ${categoria.nombre}`,
+        nombrePagina : `Departamento: ${categoria.nombre}`,
         meetis,
         moment
     })

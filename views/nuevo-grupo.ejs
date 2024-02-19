@@ -4,7 +4,7 @@
     <form class="default-form" action="/nuevo-grupo" method="POST" enctype="multipart/form-data">
         <div class="campo">
             <label>Nombre</label>
-            <input type="text" name="nombre" placeholder="Nombre Grupo">
+            <input type="text" name="nombre" placeholder="Nombre Materia/Grupo">
         </div>   
 
         <div class="campo descripcion">
@@ -16,9 +16,9 @@
         </div>
 
         <div class="campo">
-            <label>Categoría</label>
+            <label>Departamento</label>
             <select name="categoria">
-                <option value="" selected disabled>-- Elige una categoria --</option>
+                <option value="" selected disabled>-- Elige una departamento --</option>
                 <% categorias.forEach(categoria => { %>
                     <option value="<%= categoria.id %>"><%= categoria.nombre %></option>
                 <% }) %>
@@ -31,12 +31,12 @@
         </div>
 
         <div class="campo">
-            <label>Sitio Web</label>
-            <input type="url" name="url" placeholder="Sitio Web">
+            <label>Meet(Google/Zoom) </label>
+            <input type="url" name="url" placeholder="Enlace clase">
         </div>
 
         <div class="campo enviar">
-            <input type="submit" value="Crear Grupo" class="btn btn-rosa">
+            <input type="submit" value="Crear Materia/Grupo" class="btn btn-rosa">
         </div>
     </form>
 </main>

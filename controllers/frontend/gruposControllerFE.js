@@ -25,7 +25,7 @@ exports.mostrarGrupo = async (req, res, next) => {
 
     // mostrar la vista
     res.render('mostrar-grupo',{
-        nombrePagina: `Información Grupo: ${grupo.nombre}`,
+        nombrePagina: `Información Materia/Grupo: ${grupo.nombre}`,
         grupo,
         meetis,
         moment
