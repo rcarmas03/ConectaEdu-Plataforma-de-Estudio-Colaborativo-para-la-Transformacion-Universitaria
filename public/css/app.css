@@ -74,9 +74,10 @@ p {
     display: block;
     flex : 0 0 100%;
 }
-@media (min-width: 768px) {
+@media (min-width: 330px) {
     .btn {
         width: auto;
+        height: auto;
         display: inline-block;
         flex: 0 0 auto;
     }
@@ -114,7 +115,7 @@ p {
 .columnas-2 {
     grid-template-columns: repeat(2, 1fr);
 }
-@media (min-width:768px) {
+@media (min-width:769px) {
     .columnas-md-2 {
         grid-template-columns: repeat(2, 1fr);
     }
@@ -185,7 +186,7 @@ p {
    text-align: center;
     margin-top: 1rem;
 }
-@media (min-width:768px){
+@media (min-width:769px){
     .site-header {
         display: flex;
         align-items: center;
@@ -204,7 +205,8 @@ nav.nav a:first-child {
 .logo {
     height: 92px;
     width: 290px;
-    padding-left: 110px;
+    padding-left: 60px;
+    padding-right: 60px;
 }
 .hero {
     height: 38rem;
@@ -258,7 +260,7 @@ form textarea{
     padding: 1.1rem;
     margin-bottom: 2rem;
 }
-@media (min-width:768px) {
+@media (min-width:769px) {
     .buscador-inicio form {
         flex-direction: row;
         align-items: flex-start;
@@ -286,7 +288,7 @@ main.categorias {
     margin: 1rem;
     display: block;
 }
-@media (min-width:768px) {
+@media (min-width:769px) {
     .listado-categorias li p {
         font-size: 1.4rem;
     }
@@ -314,7 +316,7 @@ main.categorias {
 
     padding: 5rem 0;
 }
-@media (min-width:768px) {
+@media (min-width:769px) {
     .meeti-bg {
         background: linear-gradient(
             to right, 
@@ -343,7 +345,7 @@ main.categorias {
 .site-footer p {
     margin: 0;
 }
-@media (min-width:768px) {
+@media (min-width:769px) {
     .site-footer {
         display: flex;
         justify-content: space-between;
@@ -454,7 +456,7 @@ trix-toolbar .trix-button--icon-strike {
     margin-bottom: 1rem;
 }
 
-@media (min-width:768px) {
+@media (min-width:769px) {
     .contenedor-botones {
         display: flex;
         flex-direction: row;
@@ -481,7 +483,7 @@ trix-toolbar .trix-button--icon-strike {
 .seccion-admin li:last-of-type{
     border-bottom: none;
 }
-@media (min-width:768px) {
+@media (min-width:769px) {
     .seccion-admin li {
         display: flex;
         justify-content: space-between;
@@ -514,7 +516,7 @@ trix-toolbar .trix-button--icon-strike {
     border-top: 4px solid #EAEAEA;
     padding: 5rem 0;
 }
-@media (min-width:768px) {
+@media (min-width:769px) {
     .encabezado-evento .contenedor {
         display: flex;
         justify-content: space-between;
@@ -531,7 +533,7 @@ trix-toolbar .trix-button--icon-strike {
     flex-direction: column;
     justify-content: center;
 }
-@media (min-width: 768px) {
+@media (min-width: 769px) {
     .pregunta-asistencia {
         flex-basis: 400px;
     }
@@ -560,7 +562,7 @@ trix-toolbar .trix-button--icon-strike {
     background-color: #F2F2F2;
     padding: 5rem 0;
 }
-@media (min-width:768px) {
+@media (min-width:769px) {
     .contenido-evento .contenedor{
         display: flex;
         justify-content: space-between;
@@ -575,7 +577,7 @@ trix-toolbar .trix-button--icon-strike {
 }
 
 /** Asistentes **/
-.asistentes .titulo {
+.asistentes .titulo{
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -670,7 +672,7 @@ div.asistentes h1,
 .listado-asistentes li:last-of-type {
     border-bottom: 3px solid #EAEAEA;
 }
-@media (min-width: 768px) {
+@media (min-width: 769px) {
     .listado-asistentes {
         max-width: 600px;
         margin: 0 auto;
@@ -725,14 +727,14 @@ div.asistentes h1,
     margin-bottom: 2rem;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 769px) {
     .lista-grupos li{
         flex: 0 0 calc(33.3% - 2rem);
         
     }
 }
 
-@media (min-width: 768px) {
+@media (min-width: 769px) {
     .cercanos {
         display: flex;
         justify-content: space-between;

@@ -44,7 +44,9 @@ exports.crearMeeti = async (req, res) =>{
 // sanitiza los meeti
 exports.sanitizarMeeti = (req, res, next) => {
     req.sanitizeBody('titulo');
-    req.sanitizeBody('invitado');
+    req.sanitizeBody('url');
+    req.sanitizeBody('celular');
+    // req.sanitizeBody('invitado');
     // req.sanitizeBody('cupo');
     req.sanitizeBody('fecha');
     req.sanitizeBody('hora');
@@ -94,19 +96,20 @@ exports.editarMeeti = async (req, res, next) =>{
 
     // asignar los valores
 
-    const { grupoId, titulo, invitado, fecha, hora, cupo, descripcion, direccion, ciudad, estado, pais} = req.body;
+    const { grupoId, titulo, url, celular, invitado, fecha, hora, cupo, descripcion, direccion, ciudad, estado, pais} = req.body;
 
     meeti.grupoId = grupoId;
     meeti.titulo = titulo;
-    meeti.invitado = invitado;
+    meeti.url = url;
+    meeti.celular = celular;
     meeti.fecha = fecha;
     meeti.hora = hora;
     // meeti.cupo = cupo;
     meeti.descripcion = descripcion;
-    meeti.direccion = direccion;
-    meeti.ciudad = ciudad;
-    meeti.estado = estado;
-    meeti.pais = pais;
+    // meeti.direccion = direccion;
+    // meeti.ciudad = ciudad;
+    // meeti.estado = estado;
+    // meeti.pais = pais;
 
     // almacenar en la BD
     await meeti.save();

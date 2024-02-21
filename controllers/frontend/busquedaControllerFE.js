@@ -24,8 +24,8 @@ exports.resultadosBusqueda = async (req, res) =>{
     const meetis = await Meeti.findAll({
         where : {
             titulo : {[Op.iLike] : '%'+ titulo +'%'},
-            ciudad : {[Op.iLike] : '%'+ ciudad +'%'},
-            pais : {[Op.iLike] : '%'+ pais +'%'},
+            // ciudad : {[Op.iLike] : '%'+ ciudad +'%'},
+            // pais : {[Op.iLike] : '%'+ pais +'%'},
         },
         include : [
             {

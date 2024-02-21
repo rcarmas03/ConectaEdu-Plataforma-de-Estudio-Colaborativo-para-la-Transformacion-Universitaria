@@ -17,9 +17,17 @@
             <label>Titulo</label>
             <input type="text" name="titulo" value="<%= meeti.titulo %>">
         </div>
-        <div class="campo">
+        <!-- <div class="campo">
             <label>Invitado</label>
             <input type="text" name="invitado" value="<%= meeti.invitado %>">
+        </div> -->
+        <div class="campo">
+            <label>Celular</label>
+            <input type="text" name="celular" value="<%= meeti.celular %>">
+        </div>
+        <div class="campo">
+            <label>Enlace Whatsapp <br>(opcional)</label>
+            <input type="url" name="url" placeholder="Enlace contacto Whatsapp">
         </div>
         <div class="columnas-2 grid">
             <div class="campo">
@@ -42,7 +50,7 @@
                 <trix-editor input="x"></trix-editor>
             </div>
         </div>
-        <legend>Ubicación Tutoría</legend>
+        <!-- <legend>Ubicación Tutoría</legend> -->
         <!-- <div class="campo buscador">
             <label>Coloca la Dirección del Meeti</label>
             <div class="contenedor-input">
@@ -57,7 +65,7 @@
         
         <p class="informacion">Confirma que los siguientes campos sean correctos:</p>
 
-        <div class="campo">
+        <!-- <div class="campo">
             <label>Dirección</label>
             <input type="text" id="direccion" name="direccion" value="<%= meeti.direccion %>">
         </div>
@@ -72,7 +80,7 @@
         <div class="campo">
             <label>País</label>
             <input type="text" id="pais" name="pais" value="<%= meeti.pais %>">
-        </div>
+        </div> -->
             <!-- <input type="hidden" id="lat" name="lat" readonly="readonly" value="<= meeti.ubicacion.coordinates[0] >">
             <input type="hidden" id="lng" name="lng" readonly="readonly" value="<= meeti.ubicacion.coordinates[1] >"> -->
         <div class="campo enviar">

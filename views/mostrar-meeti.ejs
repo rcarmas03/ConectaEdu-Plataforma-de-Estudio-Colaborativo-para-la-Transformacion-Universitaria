@@ -113,8 +113,13 @@
                 <% const fecha = meeti.fecha + ' ' + meeti.hora; %>
                 <p><%= moment(fecha).format('LLLL') %> Horas</p>
             </div>
+            <h1>Contacto del Tutor</h1>
             <div class="ubicacion">
-                <p> <%= meeti.direccion %>, <%= meeti.ciudad %>, <%= meeti.estado %>, <%= meeti.pais %> </p>
+                <p> <b>Correo:</b> <%=  meeti.usuario.email %> </p>
+                <p> <b>Celular:</b> <%= meeti.celular %> </p>
+                <% if( meeti.url) {%>
+                    <p> <b>Enlace Whatsapp:</b> <a href="<%= meeti.url %>"  target="_blank"><%= meeti.url %></a> </p>
+                <% } %>
             </div>
          
         </aside>

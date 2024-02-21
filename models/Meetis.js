@@ -27,7 +27,9 @@ const Meeti = db.define(
         slug : {
             type: Sequelize.STRING,
         },
-        invitado : Sequelize.STRING,
+        celular: Sequelize.INTEGER,
+        url: Sequelize.TEXT,
+        // invitado : Sequelize.STRING,
         // cupo : {
         //     type: Sequelize.INTEGER,
         //     defaultValue : 0
@@ -59,42 +61,42 @@ const Meeti = db.define(
                 }
             }
         },
-        direccion : {
-            type : Sequelize.STRING, 
-            allowNull : false,
-            validate : {
-                notEmpty : {
-                    msg : 'Agrega una dirección'
-                }
-            }
-        },
-        ciudad : {
-            type : Sequelize.STRING, 
-            allowNull : false,
-            validate : {
-                notEmpty : {
-                    msg : 'Agrega una Ciudad'
-                }
-            }
-        },
-        estado : {
-            type : Sequelize.STRING, 
-            allowNull : false,
-            validate : {
-                notEmpty : {
-                    msg : 'Agrega un estado'
-                }
-            }
-        },
-        pais : {
-            type : Sequelize.STRING, 
-            allowNull : false,
-            validate : {
-                notEmpty : {
-                    msg : 'Agrega un país'
-                }
-            }
-        },
+        // direccion : {
+        //     type : Sequelize.STRING, 
+        //     allowNull : false,
+        //     validate : {
+        //         notEmpty : {
+        //             msg : 'Agrega una dirección'
+        //         }
+        //     }
+        // },
+        // ciudad : {
+        //     type : Sequelize.STRING, 
+        //     allowNull : false,
+        //     validate : {
+        //         notEmpty : {
+        //             msg : 'Agrega una Ciudad'
+        //         }
+        //     }
+        // },
+        // estado : {
+        //     type : Sequelize.STRING, 
+        //     allowNull : false,
+        //     validate : {
+        //         notEmpty : {
+        //             msg : 'Agrega un estado'
+        //         }
+        //     }
+        // },
+        // pais : {
+        //     type : Sequelize.STRING, 
+        //     allowNull : false,
+        //     validate : {
+        //         notEmpty : {
+        //             msg : 'Agrega un país'
+        //         }
+        //     }
+        // },
         interesados : {
             type: Sequelize.ARRAY(Sequelize.INTEGER),
             defaultValue : []

@@ -18,7 +18,7 @@ exports.mostrarMeeti = async(req, res, next) => {
             }, 
             {
                 model : Usuarios,
-                attributes : ['id', 'nombre', 'imagen']
+                attributes : ['id', 'nombre', 'imagen', 'email']
             }
         ]
     });
