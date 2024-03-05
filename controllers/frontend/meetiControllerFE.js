@@ -92,7 +92,7 @@ exports.mostrarAsistentes = async (req, res) => {
 
     // crear la vista y pasar datos
     res.render('asistentes-meeti', {
-        nombrePagina : 'Listado Asistentes Meeti',
+        nombrePagina : 'Listado Asistentes Tutoria',
         asistentes
     })
 }
